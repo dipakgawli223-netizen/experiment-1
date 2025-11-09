@@ -1,18 +1,618 @@
-import java.util.*;
-public class factorial {
+experiment 1
+import java.util.*; 
+public class factorial { 
+@SuppressWarnings("resource") 
+public static void main(String[] args) { 
+int f=1; 
+int num; 
+Scanner s= new Scanner(System.in); 
+System.out.println("Enter the number") 
+num=s.nextInt(); 
+for(int i=1;i<=num;i++) 
+{ 
+f=f*i;  
+} 
+System.out.println(f); 
+} 
+} 
 
-	@SuppressWarnings("resource")
-	public static void main(String[] args) {
-		int f=1;
-		int num;
-		Scanner s= new Scanner(System.in);
-		System.out.println("Enter the number")	;
-		num=s.nextInt();
-		for(int i=1;i<=num;i++)
-		{
-		f=f*i;	
-		}
-	System.out.println(f);
-	}
+experiment 1(1)
 
+import java.util.Scanner;  
+public class prime_number { 
+ 
+ public static void main(String[] args) { 
+  // TODO Auto-generated method stub 
+      int n;  
+      boolean status = true;  
+      int num = 3;  
+           for ( int i = 2 ; i <=100 ; i++ )  
+      {  
+          status = true; 
+         for ( int j = 2 ; j < i ; j++ )  
+         {  
+            if ( i%j == 0 )  
+            {  
+               status =false;  
+               break;  
+            }  
+         }  
+         if ( status )  
+         {  
+            System.out.println(i);  
+            //i++;  
+         }  
+        }           
+   }  
 }
+
+
+experiment 1(2)
+
+/public class Sum_Average { 
+ 
+//} 
+import java.util.Scanner; 
+public class Sum_Average 
+{ 
+    public static void main(String[] args)  
+    { 
+        int n, sum = 0; 
+        float average; 
+        Scanner s = new Scanner(System.in); 
+         System.out.print("Enter no. of elements you want in array:"); 
+        n = s.nextInt(); 
+        int a[] = new int[n]; 
+        System.out.println("Enter all the elements:"); 
+        for(int i = 0; i < n ; i++) 
+        { 
+            a[i] = s.nextInt(); 
+            sum = sum + a[i]; 
+        } 
+        System.out.println("Sum:"+sum); 
+        average = (float)sum / n; 
+        System.out.println("Average:"+average); 
+    } 
+} 
+
+
+experiment 2
+
+import java.util.Scanner; 
+ 
+ 
+public class Calculator { 
+ 
+ public static void main(String[] args) { 
+  // TODO Auto-generated method stub 
+   char operator; 
+      Double number1, number2, result; 
+ 
+      // create an object of Scanner class 
+      Scanner input = new Scanner(System.in); 
+      System.out.println("Choose an operator: +, -, *, or /"); 
+      operator = input.next().charAt(0); 
+ 
+      // ask users to enter numbers 
+      System.out.println("Enter first number"); 
+      number1 = input.nextDouble(); 
+ 
+      System.out.println("Enter second number"); 
+      number2 = input.nextDouble(); 
+      switch (operator) { 
+ 
+        // performs addition between numbers 
+        case '+': 
+          result = number1 + number2; 
+          System.out.println(number1 + " + " + number2 + " = " + result); 
+          //break; 
+ 
+        // performs subtraction between numbers 
+        case '-': 
+          result = number1 - number2; 
+          System.out.println(number1 + " - " + number2 + " = " + result); 
+          //break; 
+ 
+        case '*': 
+            result = number1 * number2; 
+            System.out.println(number1 + " * " + number2 + " = " + result); 
+            //break; 
+ 
+          // performs division between numbers 
+          case '/': 
+            result = number1 / number2; 
+            System.out.println(number1 + " / " + number2 + " = " + result); 
+            //break; 
+          default: 
+              System.out.println("Invalid operator!"); 
+              //break; 
+          } 
+ 
+          input.close(); 
+        } 
+      } 
+
+experiment 3
+
+class Rectangle { 
+    // Data fields 
+    private double length; 
+    private double width; 
+    private double area; 
+    private String colour; 
+ 
+    // Constructor 
+    Rectangle(double length, double width, String colour) { 
+        this.length = length; 
+        this.width = width; 
+        this.colour = colour; 
+        findArea(); // Automatically calculate area during object creation 
+    } 
+ 
+    // Getter for length 
+    double get_length() { 
+        return length; 
+    } 
+ 
+    // Getter for width 
+    double get_width() { 
+        return width; 
+    } 
+ 
+    // Getter for colour 
+    String get_colour() { 
+        return colour; 
+    } 
+ 
+    // Method to calculate area 
+    void findArea() { 
+        area = length * width; 
+    } 
+ 
+    // Getter for area 
+    double get_area() { 
+        return area; 
+    } 
+} 
+ 
+public class RectangleTest { 
+    public static void main(String[] args) { 
+        // Creating two Rectangle objects 
+        Rectangle rect1 = new Rectangle(10.5, 4.2, "Blue"); 
+        Rectangle rect2 = new Rectangle(10.5, 5.2, "Blue"); 
+ 
+        // Comparing areas and colours 
+        if (rect1.get_area() == rect2.get_area() && 
+rect1.get_colour().equalsIgnoreCase(rect2.get_colour())) { 
+            System.out.println("Matching Rectangles"); 
+        } else { 
+            System.out.println("Non-matching Rectangle"); 
+        } 
+    } 
+} 
+
+experiment 4
+
+// Program to demonstrate Method Overloading and Constructor Overloading 
+class OverloadDemo { 
+ 
+    // Constructor Overloading 
+    OverloadDemo() { 
+        System.out.println("Default Constructor called."); 
+    } 
+ 
+    OverloadDemo(int a) { 
+        System.out.println("Constructor with one parameter called. Value: " + a); 
+    } 
+ 
+    OverloadDemo(int a, int b) { 
+        System.out.println("Constructor with two parameters called. Sum: " + (a + b)); 
+    } 
+ 
+    // Method Overloading 
+    void display() { 
+        System.out.println("Display method with no parameters."); 
+    } 
+ 
+    void display(int a) { 
+        System.out.println("Display method with one parameter. Value: " + a); 
+    } 
+ 
+    void display(int a, int b) { 
+        System.out.println("Display method with two parameters. Sum: " + (a + b)); 
+    } 
+ 
+    public static void main(String[] args) { 
+        // Constructor Overloading in action 
+        System.out.println("Constructor Overloading:"); 
+        OverloadDemo obj1 = new OverloadDemo();          // Calls default constructor 
+        OverloadDemo obj2 = new OverloadDemo(10);        // Calls constructor with one parameter 
+        OverloadDemo obj3 = new OverloadDemo(10, 20);    // Calls constructor with two 
+parameters 
+ 
+        // Method Overloading in action 
+        System.out.println("\nMethod Overloading:"); 
+        obj1.display();             // Calls method with no parameter 
+        obj1.display(5);            // Calls method with one parameter 
+        obj1.display(7, 8);         // Calls method with two parameters 
+    } 
+}
+
+experiment 5
+
+import java.util.Scanner; 
+ 
+public class SortArray { 
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in); 
+         
+        // Sorting integers 
+        System.out.println("Enter the number of integers:"); 
+        int n = scanner.nextInt(); 
+        int[] numbers = new int[n]; 
+         
+        System.out.println("Enter " + n + " integers:"); 
+        for (int i = 0; i < n; i++) { 
+            numbers[i] = scanner.nextInt(); 
+        } 
+ 
+        // Sorting names 
+        System.out.println("Enter the number of names:"); 
+        int m = scanner.nextInt(); 
+        String[] names = new String[m]; 
+        scanner.nextLine();  // Consume the newline left after nextInt() 
+ 
+        System.out.println("Enter " + m + " names:"); 
+        for (int i = 0; i < m; i++) { 
+            names[i] = scanner.nextLine(); 
+        } 
+ 
+        // Sort integers using a simple bubble sort 
+        for (int i = 0; i < n - 1; i++) { 
+            for (int j = 0; j < n - i - 1; j++) { 
+                if (numbers[j] > numbers[j + 1]) { 
+                  
+                  
+                    int temp = numbers[j]; 
+                    numbers[j] = numbers[j + 1]; 
+                    numbers[j + 1] = temp; 
+                } 
+            } 
+        } 
+ 
+        // Sort names using a simple bubble sort 
+        for (int i = 0; i < n - 1; i++) { 
+            // Inner loop to compare adjacent names 
+            for (int j = 0; j < n - i - 1; j++) { 
+                // Use compareTo to compare two strings lexicographically 
+                if (names[j].compareTo(names[j + 1]) > 0) { 
+                    // Swap names[j] and names[j+1] if they are in the wrong order 
+                    String temp = names[j]; 
+                    names[j] = names[j + 1]; 
+                    names[j + 1] = temp; 
+                } 
+            } 
+        } 
+ 
+        // Display sorted integers 
+        System.out.println("\nSorted Integers:"); 
+        for (int i = 0; i < n; i++) { 
+            System.out.print(numbers[i] + " "); 
+        } 
+ 
+        // Display sorted names 
+        System.out.println("\n\nSorted Names:"); 
+        for (int i = 0; i < m; i++) { 
+            System.out.println(names[i]); 
+        } 
+ 
+        scanner.close(); 
+    } 
+} 
+
+
+experiment 6
+
+import java.util.Scanner; 
+ 
+public class MatrixAddition { 
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in); 
+ 
+        // Input the size of matrices 
+        System.out.println("Enter the number of rows:"); 
+        int rows = scanner.nextInt(); 
+        System.out.println("Enter the number of columns:"); 
+        int cols = scanner.nextInt(); 
+ 
+        // Declare two matrices and the result matrix 
+        int[][] matrix1 = new int[rows][cols]; 
+        int[][] matrix2 = new int[rows][cols]; 
+        int[][] result = new int[rows][cols]; 
+ 
+        // Input elements for the first matrix 
+        System.out.println("Enter elements of the first matrix:"); 
+        for (int i = 0; i < rows; i++) { 
+            for (int j = 0; j < cols; j++) { 
+                matrix1[i][j] = scanner.nextInt(); 
+            } 
+        } 
+ 
+        // Input elements for the second matrix 
+        System.out.println("Enter elements of the second matrix:"); 
+        for (int i = 0; i < rows; i++) { 
+            for (int j = 0; j < cols; j++) { 
+                matrix2[i][j] = scanner.nextInt(); 
+            } 
+        } 
+ 
+        // Perform addition of the two matrices 
+        for (int i = 0; i < rows; i++) { 
+            for (int j = 0; j < cols; j++) { 
+                result[i][j] = matrix1[i][j] + matrix2[i][j]; 
+            } 
+        } 
+ 
+        // Display the result matrix 
+        System.out.println("Resultant matrix after addition:"); 
+        for (int i = 0; i < rows; i++) { 
+            for (int j = 0; j < cols; j++) { 
+System.out.print(result[i][j] + " "); 
+} 
+System.out.println(); 
+} 
+scanner.close(); 
+} 
+}
+
+experiment 7 
+
+class player 
+{ 
+String name; 
+int age; 
+player(String n,int a) 
+{ name=n; age=a; } 
+void show() 
+{ 
+System.out.println("\n"); 
+System.out.println("Player name : "+name); 
+System.out.println("Age : "+age); 
+} 
+} 
+class criket_player extends player 
+{ 
+String type; 
+criket_player(String n,String t,int a) 
+{ 
+super(n,a); 
+type=t; 
+} 
+public void show() 
+{ 
+super.show(); 
+System.out.println("Player type : "+type); 
+} 
+} 
+class football_player extends player 
+{ 
+String type; 
+football_player(String n,String t,int a) 
+{ 
+super(n,a); 
+type=t; 
+} 
+public void show() 
+{ 
+super.show(); 
+System.out.println("Player type : "+type); 
+} 
+} 
+class hockey_player extends player 
+{ 
+String type; 
+hockey_player(String n,String t,int a) 
+{ 
+super(n,a); 
+type=t; 
+} 
+public void show() 
+{ 
+super.show(); 
+System.out.println("Player type : "+type); 
+} 
+} 
+public class Demo { 
+public static void main(String args[]) 
+{ 
+criket_player c=new criket_player("Ameer","criket",25); 
+football_player f=new football_player("arun","foot ball",25); 
+hockey_player h=new hockey_player("Ram","hockey",25); 
+c.show(); 
+f.show(); 
+h.show(); 
+} 
+}
+
+experiment 8
+
+interface firrst_intf { 
+ 
+public void interf_demo1(); 
+public void sum(int a, int b); 
+ 
+                        } 
+ 
+interface second_intf { 
+ 
+public void interf_demo2(); 
+ 
+public void sub(int a, int b); 
+ 
+                             } 
+public class interface_demo implements firrst_intf, second_intf 
+{ 
+ 
+public int a; public int b, c; 
+ 
+public void interf_demo1() { 
+System.out.println("This is interface 1"); 
+                   } 
+ 
+public void sum(int A, int B) 
+{    
+a=A; 
+b=B; 
+c= a+b; 
+System.out.println("addition of two numbers is "+c); 
+ 
+} 
+ 
+public void interf_demo2() { 
+System.out.println("This is interface 2"); 
+                            } 
+public void sub(int A, int B) 
+{    
+a=A; 
+b=B; 
+c= a-b; 
+System.out.println("substraction of two numbers is "+c); 
+ 
+} 
+ 
+public static void main(String[] args) { 
+// TODO Auto-generated method stub 
+interface_demo obj = new interface_demo(); 
+obj.interf_demo1(); 
+obj.sum(10,20); 
+obj.interf_demo2(); 
+obj.sub(50,20); 
+} 
+}
+
+experiment 9
+
+public class ExceptionHandlingDemo { 
+ 
+    public static void main(String[] args) { 
+        // Scenario 1: Exception occurs and is caught 
+        try { 
+            System.out.println("Inside try block (Scenario 1)"); 
+            int result = 10 / 0; // This will cause an ArithmeticException 
+            System.out.println("This line will not be executed (Scenario 1)"); 
+        } catch (ArithmeticException e) { 
+            System.out.println("Caught an ArithmeticException: " + e.getMessage()); 
+        } finally { 
+            System.out.println("Finally block executed (Scenario 1)"); 
+        } 
+        System.out.println("After try-catch-finally (Scenario 1)\n"); 
+ 
+        // Scenario 2: No exception occurs 
+        try { 
+            System.out.println("Inside try block (Scenario 2)"); 
+            int result = 10 / 2; // No exception here 
+            System.out.println("Result: " + result + " (Scenario 2)"); 
+        } catch (ArithmeticException e) { 
+            System.out.println("Caught an ArithmeticException: " + e.getMessage()); // This will not 
+be executed 
+        } finally { 
+            System.out.println("Finally block executed (Scenario 2)"); 
+        } 
+        System.out.println("After try-catch-finally (Scenario 2)\n"); 
+ 
+        // Scenario 3: Exception occurs, but a different type is caught 
+        try { 
+            System.out.println("Inside try block (Scenario 3)"); 
+            int[] numbers = {1, 2, 3}; 
+            System.out.println(numbers[5]); // This will cause an ArrayIndexOutOfBoundsException 
+        } catch (ArithmeticException e) { 
+            System.out.println("Caught an ArithmeticException: " + e.getMessage()); // This will not 
+be executed 
+        } finally { 
+            System.out.println("Finally block executed (Scenario 3)"); 
+        } 
+        System.out.println("After try-catch-finally (Scenario 3)"); 
+    } 
+}
+
+experiment 10
+
+package demo; 
+import java.awt.*; 
+import java.applet.*; 
+ 
+@SuppressWarnings("serial") 
+public class My_Applet extends Applet { 
+ public void init()  
+ { showStatus(" Initializing"); 
+  //initialization    
+  }  
+ public void start ()  
+  {  
+ //start or resume execution  
+  }  
+ public void stop()  
+  { 
+  showStatus(" stoped"); 
+ //suspend execution  
+  } 
+ public void destroy()  
+  {  
+ //perform shutdown activity  
+  }  
+  
+ public void paint(Graphics g) 
+ { g.drawOval(20,20,200,120); 
+    g.setColor(Color.green); 
+    g.fillOval(170,130,100,100); 
+    //Draw a rectangle    
+    g.setColor(Color.black); 
+    g.drawRect(220, 250, 100, 100); 
+    g.fillRect(60, 650, 100, 100); 
+  //Draw a line 
+    g.drawLine(400,10,250, 150); 
+    g.drawLine(450,150,150,10); 
+     
+    g.drawString("Hello World!", 500, 500); 
+    showStatus("showing the Status Message"); 
+       //Draw a text 
+     
+   } 
+       }
+
+
+experiment 11
+
+import java.io.FileReader; 
+import java.io.FileWriter; 
+import java.io.IOException; 
+ 
+public class FileExpt{ 
+ 
+ public static void main(String[] args) { 
+  // TODO Auto-generated method stub 
+   
+  // The file reading process may sometimes give 
+        // IOException 
+   
+        // Try block to check for exceptions 
+        try { 
+            // Creating a FileReader object and 
+           // from the local directory of computer 
+           FileReader fr = new FileReader("Input.txt"); 
+            
+           // Creating a FileWriter object 
+           FileWriter fw = new FileWriter("output.txt"); 
+            
+           String str = ""; 
+           int i; 
+           // read() method will read the file character by character  
+           // print it until it end the end of the file 
+     
+              // Condition check 
+              // Reading the file using read() method which 
+              // returns -1 at EOF while reading 
+ 
+  while ((i = fr.read()) != -1) { 
+     
+                  // Storing every character in the string
